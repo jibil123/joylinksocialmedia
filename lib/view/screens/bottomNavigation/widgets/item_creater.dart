@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/model/bloc/bottomNavigation/bottom_navigation_bloc.dart';
 import 'package:joylink/utils/colors.dart';
 import 'package:joylink/utils/media_quary.dart';
-import 'package:joylink/view/screens/authScreen/utils/bottomNavigaiton/page_changing_list.dart';
+import 'package:joylink/view/screens/bottomNavigation/widgets/page_changing_list.dart';
 
 Material bottomNavIcons(
       BuildContext context, IconData icon, int itemPosition) {

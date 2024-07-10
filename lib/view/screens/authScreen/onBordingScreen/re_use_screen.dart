@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joylink/utils/colors.dart';
 import 'package:joylink/view/screens/authScreen/create%20account/create_login.dart';
-import 'package:joylink/view/screens/authScreen/utils/custom_elevated_button.dart';
+import 'package:joylink/view/screens/utils/custom_elevated_button.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingScreen extends StatelessWidget {

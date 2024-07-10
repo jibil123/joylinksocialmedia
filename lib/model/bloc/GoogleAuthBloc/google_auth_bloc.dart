@@ -34,7 +34,6 @@ class GoogleAuthBloc extends Bloc<GoogleAuthEvent, GoogleAuthState> {
   Future<void> _signinWithGoogle(
       SigninEvent event, Emitter<GoogleAuthState> emit) async {
     emit(GoogleAuthLoading());
-    // await FirebaseAuth.instance.signOut();
     final user = await authRepository.signinWithGoogle();
     if (user != null) {
       final userDoc = await FirebaseFirestore.instance

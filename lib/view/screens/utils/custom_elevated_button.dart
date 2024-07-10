@@ -21,7 +21,7 @@ class CustomElevatedButton extends StatelessWidget {
       label: Text(label),
       style: ElevatedButton.styleFrom(
           foregroundColor: AppColors.whiteColor,
-          backgroundColor: AppColors.primaryColor),
+          backgroundColor: AppColors.tealColor),
     );
   }
 }

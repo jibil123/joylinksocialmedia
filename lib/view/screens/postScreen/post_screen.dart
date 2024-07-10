@@ -4,8 +4,8 @@ import 'package:joylink/model/bloc/PostFetchBloc/post_bloc.dart';
 import 'package:joylink/model/bloc/postBloc/post_bloc.dart';
 import 'package:joylink/utils/colors.dart';
 import 'package:joylink/utils/media_quary.dart';
-import 'package:joylink/view/screens/authScreen/utils/custom_elevated_button.dart';
-import 'package:joylink/view/screens/authScreen/utils/customtextformfield.dart';
+import 'package:joylink/view/screens/utils/custom_elevated_button.dart';
+import 'package:joylink/view/screens/utils/customtextformfield.dart';
 import 'package:joylink/view/screens/postScreen/location_screen.dart';
 import 'package:joylink/view/screens/postScreen/post_photo.dart';
 
@@ -31,6 +31,7 @@ class PostScreen extends StatelessWidget {
             backgroundColor: AppColors.primaryColor,
           ));
          postFetchBloc.add(FetchPostsEvent());
+         
         }
         if (state is PostCanceledState) {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

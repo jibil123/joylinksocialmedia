@@ -12,6 +12,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.teal[50],
       body: SingleChildScrollView(
         physics: const ScrollPhysics(),
         child: Column(
@@ -27,8 +28,11 @@ class ProfileScreen extends StatelessWidget {
             ),
              ProfileButtons(currentUserId:  FirebaseAuth.instance.currentUser
                 !.uid,profileScreen: true,),
-            UserPosts(deleteOrSave: true,currentUserId: FirebaseAuth.instance.currentUser
-                !.uid,)
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: UserPosts(deleteOrSave: true,currentUserId: FirebaseAuth.instance.currentUser
+                  !.uid,),
+            )
           ],
         ),
       ),

@@ -1,5 +1,5 @@
   import 'package:flutter/material.dart';
-import 'package:joylink/view/screens/authScreen/widgets/bottomNavigation/item_creater.dart';
+import 'package:joylink/view/screens/bottomNavigation/widgets/item_creater.dart';
 
 Row bottomNavIconsAndContainers(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [

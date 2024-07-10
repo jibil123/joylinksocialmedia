@@ -85,7 +85,8 @@ class OtherProfileStack extends StatelessWidget {
 
                   final follow = (data?['followers'] as List?) ?? [];
                   final following = (data?['following'] as List?) ?? [];
-
+                  final userName = data?['name'] ?? 'No Name';
+                  final userProfile = data?['imageUrl'] ?? '';
                   return Positioned(
                     top: 260, // Adjusted top position
                     right: 10, // Adjusted right position
@@ -151,7 +152,7 @@ class OtherProfileStack extends StatelessWidget {
                               onTap: () =>
                                   Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => ChatScreen(
-                                  reciverId: userModel.id,
+                                  receiverId: userModel.id,chatUserName:userName ,profileImage: userProfile,
                                 ),
                               )),
                               child: Container(

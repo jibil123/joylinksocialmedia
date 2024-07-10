@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/model/bloc/profilePhoto/profile_photo_bloc.dart';
-import 'package:joylink/utils/media_quary.dart';
 
 class CoverImage extends StatelessWidget {
   const CoverImage({
@@ -16,16 +15,16 @@ class CoverImage extends StatelessWidget {
     final auth = FirebaseAuth.instance;
     final firestore = FirebaseFirestore.instance;
 
-      Widget placeholder = Stack(
+      Widget placeholder = const Stack(
       alignment: Alignment.center,
       children: [
         Image(
-          height: mediaqueryHeight(0.29, context),
+          height: 250,
           width: double.infinity,
-          image: const AssetImage('assets/images/cover_photo.jpg'),
+          image: AssetImage('assets/images/cover_photo.jpg'),
           fit: BoxFit.cover,
         ),
-        const Column(
+        Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
@@ -85,7 +84,7 @@ class CoverImage extends StatelessWidget {
                     ? FadeInImage.assetNetwork(
                         placeholder: 'assets/images/cover_photo.jpg',
                         image: imageUrl,
-                        height: mediaqueryHeight(0.29, context),
+                        height:250,
                         width: double.infinity,
                         fit: BoxFit.cover,
                         fadeInDuration: const Duration(milliseconds: 500),

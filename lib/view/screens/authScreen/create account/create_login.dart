@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/model/bloc/auth_bloc/auth_bloc.dart';
 import 'package:joylink/model/model/userdetails.dart';
 import 'package:joylink/view/screens/authScreen/create%20account/email_varification.dart';
-import 'package:joylink/view/screens/authScreen/utils/custom_button.dart';
-import 'package:joylink/view/screens/authScreen/utils/customtextformfield.dart';
+import 'package:joylink/view/screens/utils/custom_button.dart';
+import 'package:joylink/view/screens/utils/customtextformfield.dart';
 
 class CreateLoginWarapper extends StatelessWidget {
   const CreateLoginWarapper({super.key});

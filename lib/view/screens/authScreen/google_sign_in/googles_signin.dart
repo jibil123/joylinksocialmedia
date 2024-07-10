@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/model/bloc/GoogleAuthBloc/google_auth_bloc.dart';
+import 'package:joylink/model/bloc/googleAuthBloc/google_auth_bloc.dart';
 import 'package:joylink/utils/colors.dart';
 
 class GoogleSignin extends StatelessWidget {

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:joylink/view/screens/chatScreen/bubble_chat_screen.dart';
 import 'package:joylink/view/screens/chatScreen/widgets/video_widget.dart';
+import 'package:joylink/view/screens/home/image_preview.dart';
 
 String getFormattedDate(Timestamp timestamp) {
   DateTime dateTime = timestamp.toDate();
@@ -50,6 +51,9 @@ Widget buildMessageItems(BuildContext context, DocumentSnapshot document, String
                   builder: (context) => VideoPlayerScreen(url: data['mediaUrl']),
                 ),
               );
+            }
+            else if(data['mediaType']=='image'){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ImagePreviewScreen(imageUrl: data['mediaUrl'], description: '')));
             }
           },
         ),

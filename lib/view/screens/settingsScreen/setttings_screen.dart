@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/model/bloc/auth_bloc/auth_bloc.dart';
 import 'package:joylink/model/bloc/bottomNavigation/bottom_navigation_bloc.dart';
 import 'package:joylink/model/bloc/themeBloc/theme_bloc.dart';
-import 'package:joylink/utils/colors.dart';
+import 'package:joylink/utils/media_quary.dart';
 import 'package:joylink/view/screens/authScreen/mainLoginScreen/login_screen.dart';
 import 'package:joylink/view/screens/settingsScreen/custom_settings_widget.dart';
 import 'package:joylink/view/screens/settingsScreen/seperate_settings_screens/info.dart';
@@ -25,11 +25,34 @@ class SettingScreen extends StatelessWidget {
     final authBloc = BlocProvider.of<AuthBloc>(context);
     BlocProvider.of<ThemeBloc>(context);
     final bottomNavBar = BlocProvider.of<BottomNavigationBloc>(context);
-    
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Settings'),
-          backgroundColor: AppColors.tealColor,
+        backgroundColor: Colors.teal[50],
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(100.0),
+          child: ClipRRect(
+            borderRadius: const BorderRadius.vertical(
+              bottom: Radius.circular(30),
+            ),
+            child: AppBar(
+              title: Row(
+              children: [
+                     SizedBox(
+                    width: 50, // Adjust the width as needed
+                    height: 50, // Adjust the height as needed
+                    child: Image.asset("assets/images/joylink-logo.png",
+                        )),
+                        SizedBox(width: mediaqueryHeight(0.01, context),),
+                const Text(
+                  'Settings',
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                ),
+              ],
+            ),
+              backgroundColor:Colors.teal[300],
+            ),
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
@@ -39,21 +62,24 @@ class SettingScreen extends StatelessWidget {
                   icon: Icons.privacy_tip_outlined,
                   text: 'Terms and conditions',
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const TermsConditionsScreen ()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const TermsConditionsScreen()));
                   }),
               const SizedBox(height: 20),
               SettingsItem(
                   icon: Icons.private_connectivity,
                   text: 'Privacy and policy',
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const PrivacyPolicyScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const PrivacyPolicyScreen()));
                   }),
               const SizedBox(height: 20),
               SettingsItem(
                   icon: Icons.info,
                   text: 'Info',
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AboutScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const AboutScreen()));
                   }),
               const SizedBox(height: 20),
               // SettingsItem(icon: Icons.share, text: 'Share', onTap: () {}),
@@ -74,18 +100,25 @@ class SettingScreen extends StatelessWidget {
               //     }
               //   },
               // ),
-              const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Version', style: TextStyle(
-              fontSize: 23,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'ABeeZee',
-            ),),
-                  Text('1.0.0', style: TextStyle(
-              fontSize: 23,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'ABeeZee',
-            ),)
+                  Text(
+                    'Version',
+                    style: TextStyle(
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'ABeeZee',
+                    ),
+                  ),
+                  Text(
+                    '1.0.0',
+                    style: TextStyle(
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'ABeeZee',
+                    ),
+                  )
                 ],
               ),
               const SizedBox(height: 20),
@@ -100,9 +133,12 @@ class SettingScreen extends StatelessWidget {
                               message: 'exit from JoyLink',
                               onOkPressed: () {
                                 authBloc.add(LogoutEvent());
-                                bottomNavBar.add(BottomNavBarPressed(currentPage: 0));
+                                bottomNavBar
+                                    .add(BottomNavBarPressed(currentPage: 0));
                                 Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(builder: (_) => const LoginScreenWrapper()),
+                                  MaterialPageRoute(
+                                      builder: (_) =>
+                                          const LoginScreenWrapper()),
                                   (route) => false,
                                 );
                               },
@@ -115,4 +151,3 @@ class SettingScreen extends StatelessWidget {
         ));
   }
 }
- 

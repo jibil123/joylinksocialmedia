@@ -76,7 +76,7 @@ class LikeAndCommentButtons extends StatelessWidget {
                       IconButton(
                         icon: Icon(
                           isLiked ? Icons.favorite : Icons.favorite_border,
-                          color: isLiked ? Colors.red : Colors.grey,
+                          color: isLiked ? Colors.red : Colors.black,
                         ),
                         onPressed: () => toggleLike(postId),
                       ),
@@ -87,7 +87,7 @@ class LikeAndCommentButtons extends StatelessWidget {
                   Row(
                     children: [
                       IconButton(
-                        icon: const Icon(Icons.comment, color: Colors.grey),
+                        icon: const Icon(Icons.comment,),
                         onPressed: () {
                           showCommentBottomSheet(
                             context,

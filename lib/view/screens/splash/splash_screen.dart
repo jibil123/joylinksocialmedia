@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/model/bloc/GoogleAuthBloc/google_auth_bloc.dart';
+import 'package:joylink/model/bloc/googleAuthBloc/google_auth_bloc.dart';
 import 'package:joylink/model/bloc/auth_bloc/auth_bloc.dart';
 import 'package:joylink/view/screens/authScreen/mainLoginScreen/login_screen.dart';
 import 'package:joylink/view/screens/bottomNavigation/bottom_navigation.dart';
@@ -59,7 +59,7 @@ class SplashScreen extends StatelessWidget {
           child: Image(
               width: 300,
               height: 300,
-              image: AssetImage('assets/images/joylink-logo.png')),
+              image: AssetImage("assets/images/joylink-logo.png")),
         ),
       ),
     );

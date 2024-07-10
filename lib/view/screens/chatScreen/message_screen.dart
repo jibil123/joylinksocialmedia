@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:joylink/model/bloc/chatBloc/chat_bloc.dart';
+import 'package:joylink/utils/media_quary.dart';
 import 'package:joylink/view/screens/chatScreen/widgets/build_message_list.dart';
 import 'package:joylink/view/screens/chatScreen/widgets/emoji_widget.dart';
 import 'package:joylink/view/screens/chatScreen/widgets/share_image_video.dart';
 import 'package:joylink/viewModel/firebase/chatFetch/fetch_chat.dart';
 
 class ChatScreen extends StatelessWidget {
-  final String reciverId;
-  ChatScreen({super.key, required this.reciverId});
+  final String receiverId;
+  final String profileImage;
+  final String chatUserName;
+  ChatScreen(
+      {super.key,
+      required this.receiverId,
+      required this.profileImage,
+      required this.chatUserName});
 
   final FetchChat fetchChat = FetchChat();
   final TextEditingController messageController = TextEditingController();
@@ -27,16 +34,37 @@ class ChatScreen extends StatelessWidget {
           bool emojiShowing = state is EmojiToggled && state.isEmojiVisible;
 
           return Scaffold(
-            appBar: AppBar(
-              title: const Text('Message Screen'),
-              backgroundColor: Colors.blueAccent,
-              flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.blue, Colors.purple],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+            backgroundColor: Colors.teal[50],
+            appBar: PreferredSize(
+              preferredSize: const Size.fromHeight(70.0),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(30),
+                ),
+                child: AppBar(
+                  centerTitle: true,
+          
+                  title: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 22, // Adjust the radius as needed
+                        backgroundImage: NetworkImage(profileImage),
+                        onBackgroundImageError: (_, __) => Icon(Icons.person),
+                      ),
+                      SizedBox(width: mediaqueryHeight(0.01, context)),
+                      Expanded(
+                        child: Text(
+                          chatUserName,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                          overflow: TextOverflow.fade,
+                        ),
+                      ),
+                    ],
                   ),
+                  backgroundColor: Colors.teal[300],
                 ),
               ),
             ),
@@ -44,7 +72,7 @@ class ChatScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: MessageListWidget(
-                    reciverId: reciverId,
+                    reciverId: receiverId,
                     scrollController: scrollController,
                     messageController: messageController,
                   ),
@@ -76,11 +104,14 @@ class ChatScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      ShareImageAndPhoto(picker: picker, chatBloc: chatBloc, reciverId: reciverId),
+                      ShareImageAndPhoto(
+                          picker: picker,
+                          chatBloc: chatBloc,
+                          reciverId: receiverId),
                       IconButton(
                         onPressed: () {
                           chatBloc.add(SendMessage(
-                            reciverId: reciverId,
+                            reciverId: receiverId,
                             message: messageController.text,
                           ));
                           messageController.clear();
@@ -105,4 +136,3 @@ class ChatScreen extends StatelessWidget {
     );
   }
 }
-

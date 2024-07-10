@@ -21,6 +21,7 @@ class UsersPostCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
+      color: Colors.teal[100],
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,37 +72,38 @@ class UsersPostCard extends StatelessWidget {
               ),
             ),
             subtitle:savedPostModel.location.isNotEmpty?
-             Text(savedPostModel.location):const Text('Null'),
+             Text(savedPostModel.location):const Text(' '),
             trailing: PopupHomeMenu(
               savedPostModel: savedPostModel,
               isSaveOrNot: isSaveOrNot,
             ),
           ),
           PostImageWidget(savedPostModel: savedPostModel),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Text(
-                    savedPostModel.description,
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              LikeAndCommentButtons(postId: savedPostModel.postId),
+               Padding(
+                 padding: const EdgeInsets.only(right: 10),
+                 child: Text(
+                    "Posted on: ${dateAndTime.formatRelativeTime(savedPostModel.date)}",
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                      
                     ),
                   ),
-                ),
-                Text(
-                  "Posted on: ${dateAndTime.formatRelativeTime(savedPostModel.date)}",
-                  style: const TextStyle(
-                    fontStyle: FontStyle.italic,
-                    color: Colors.grey,
-                  ),
-                ),
-              ],
+               ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15, right: 15),
+            child: Text(
+              savedPostModel.description,
+              style: const TextStyle(
+                fontSize: 16, 
+              ),
             ),
           ),
-          LikeAndCommentButtons(postId: savedPostModel.postId),
+          
           const SizedBox(height: 10), // Added space for better UI
         ],
       ),

@@ -10,10 +10,21 @@ class ChatListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentUser = FirebaseAuth.instance.currentUser!.uid;
-
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Chat List'),
+      backgroundColor: Colors.teal[50],
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(100),
+        child: ClipRRect(
+          borderRadius:
+              const BorderRadius.vertical(bottom: Radius.circular(30)),
+          child: AppBar(
+            backgroundColor: Colors.teal[300],
+            title: const Text(
+              'Chat List',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
@@ -72,36 +83,50 @@ class ChatListScreen extends StatelessWidget {
                   if (messageDate.year == currentDate.year &&
                       messageDate.month == currentDate.month &&
                       messageDate.day == currentDate.day) {
-                    formattedDate = DateFormat.jm().format(messageDate); // Show time
+                    formattedDate =
+                        DateFormat.jm().format(messageDate); // Show time
                   } else {
-                    formattedDate = DateFormat.yMMMd().format(messageDate); // Show date
+                    formattedDate =
+                        DateFormat.yMMMd().format(messageDate); // Show date
                   }
 
-                  return ListTile(
-                    leading: userProfile.isNotEmpty
-                        ? CircleAvatar(
-                            backgroundImage: NetworkImage(userProfile),
-                          )
-                        : const CircleAvatar(
-                            child: Icon(Icons.person),
-                          ),
-                    title: Text(userName),
-                    subtitle: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(lastMessage),
-                        Text(formattedDate, style: const TextStyle(color: Colors.grey)),
-                      ],
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ChatScreen(reciverId: receiverId),
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        leading: userProfile.isNotEmpty
+                            ? CircleAvatar(
+                                backgroundImage: NetworkImage(userProfile),
+                              )
+                            : const CircleAvatar(
+                                child: Icon(Icons.person),
+                              ),
+                        title: Text(userName),
+                        subtitle: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(lastMessage),
+                            Text(formattedDate,
+                                style: const TextStyle(color: Colors.grey)),
+                          ],
                         ),
-                      );
-                    },
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ChatScreen(receiverId: receiverId,chatUserName:userName ,profileImage:userProfile ),
+                            ),
+                          );
+                        },
+                      ),
+                      const Divider(
+                        color: Colors.grey,
+                        thickness: 0.5,
+                        indent: 16,
+                        endIndent: 16,
+                      ),
+                    ],
                   );
                 },
               );

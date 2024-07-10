@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joylink/utils/media_quary.dart';
 import 'package:joylink/view/screens/postScreen/post_screen.dart';
 import 'package:joylink/view/screens/postScreen/reelUpload/reel_upload.dart';
 
@@ -10,19 +11,43 @@ class UploadScreen extends StatelessWidget {
     return DefaultTabController(
         length: 2,
         child: Scaffold(
-          appBar: AppBar(
-            bottom: const TabBar(tabs: [
-              Tab(
-                text: 'image',
+          backgroundColor: Colors.teal[50],
+          appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(100),
+            child: ClipRRect(
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(30)
+                ),
+              child: AppBar(
+                backgroundColor: Colors.teal[300],
+                bottom: const TabBar(tabs: [
+                  Tab(
+                    text: 'image',
+                  ),
+                  Tab(
+                    text: 'FlickVid',
+                  ),
+                  // Tab(
+                  //   text: 'poll',
+                  // ),
+                ]),
+                title: Row(
+                  children: [
+                         SizedBox(
+                        width: 50, // Adjust the width as needed
+                        height: 50, // Adjust the height as needed
+                        child: Image.asset("assets/images/joylink-logo.png",
+                            )),
+                            SizedBox(width: mediaqueryHeight(0.01, context),),
+                    const Text(
+                      'JoylinkShare',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                    ),
+                  ],
+                ),
               ),
-              Tab(
-                text: 'FlickVid',
-              ),
-              // Tab(
-              //   text: 'poll',
-              // ),
-            ]),
-            title: const Text('post Screen'),
+            ),
           ),
           body: TabBarView(children: [
             PostScreen(),

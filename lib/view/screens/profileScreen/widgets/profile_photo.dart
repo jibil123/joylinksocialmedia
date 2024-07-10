@@ -32,37 +32,30 @@ class ProfilePhoto extends StatelessWidget {
         return BlocBuilder<ProfilePhotoBloc, ProfilePhotoState>(
           builder: (context, state) {
             if (state is LoadingprofileState) {
-              return const Padding(
-                padding: EdgeInsets.only(right: 200, top: 250),
-                child: Center(child: CircularProgressIndicator()),
-              );
+              return const Center(child: CircularProgressIndicator());
             }
-            return Positioned(
-              top: 200,
-              left: 10,
-              child: GestureDetector(
-                onTap: () {
-                  selectPhotoForProfile.add(SelectPhotoFromCamAndGal());
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.black54, width: 5),
-                  ),
-                  child: CircleAvatar(
-                    radius: 80,
-                    backgroundColor: AppColors.primaryColor,
-                    backgroundImage: imageUrl != null && imageUrl.isNotEmpty
-                        ? NetworkImage(imageUrl)
-                        : null,
-                    child: imageUrl == null || imageUrl.isEmpty
-                        ? const ClipOval(
-                            child: Image(
-                              image: AssetImage('assets/images/pngegg.png'),
-                            ),
-                          )
-                        : null,
-                  ),
+            return GestureDetector(
+              onTap: () {
+                selectPhotoForProfile.add(SelectPhotoFromCamAndGal());
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.black54, width: 5),
+                ),
+                child: CircleAvatar(
+                  radius: 80,
+                  backgroundColor: AppColors.primaryColor,
+                  backgroundImage: imageUrl != null && imageUrl.isNotEmpty
+                      ? NetworkImage(imageUrl)
+                      : null,
+                  child: imageUrl == null || imageUrl.isEmpty
+                      ? const ClipOval(
+                          child: Image(
+                            image: AssetImage('assets/images/pngegg.png'),
+                          ),
+                        )
+                      : null,
                 ),
               ),
             );
