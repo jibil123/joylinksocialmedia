@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/model/bloc/savePost/save_post_bloc.dart';
-import 'package:joylink/model/model/saved_post_model.dart';
+import 'package:joylink/model/models/saved_post_model.dart';
 
 class PopupHomeMenu extends StatelessWidget {
   const PopupHomeMenu({

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:joylink/model/model/userdetails.dart';
+import 'package:joylink/model/models/userdetails.dart';
 import 'package:meta/meta.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';

@@ -17,9 +17,9 @@ import 'package:joylink/model/bloc/auth_bloc/auth_bloc.dart';
 import 'package:joylink/model/bloc/profilePhoto/profile_photo_bloc.dart';
 import 'package:joylink/model/bloc/savePost/save_post_bloc.dart';
 import 'package:joylink/model/bloc/userSearchBloc/user_search_bloc.dart';
-import 'package:joylink/view/screens/splash/splash_screen.dart';
-import 'package:joylink/viewModel/firebase/fetchData/fetch_post_data.dart';
-import 'package:joylink/viewModel/firebase/follow_unfollow/follow_unfollow.dart';
+import 'package:joylink/view/screens/splash_screen/splash_screen.dart';
+import 'package:joylink/viewmodel/firebase/fetch_userdata_repo/fetch_post_data.dart';
+import 'package:joylink/viewmodel/firebase/follow_unfollow/follow_unfollow.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

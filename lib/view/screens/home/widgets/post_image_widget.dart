@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:joylink/model/model/saved_post_model.dart';
+import 'package:joylink/model/models/saved_post_model.dart';
 import 'package:joylink/utils/colors.dart';
 import 'package:joylink/utils/media_quary.dart';
 import 'package:joylink/view/screens/home/image_preview.dart';

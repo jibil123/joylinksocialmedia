@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:joylink/model/model/fetch_model.dart';
-import 'package:joylink/viewModel/firebase/fetchData/fetch_post_data.dart';
+import 'package:joylink/model/models/fetch_model.dart';
+import 'package:joylink/viewmodel/firebase/fetch_userdata_repo/fetch_post_data.dart';
 import 'package:meta/meta.dart';
 
 part 'post_event.dart';

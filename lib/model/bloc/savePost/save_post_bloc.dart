@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:joylink/model/model/saved_post_model.dart';
-import 'package:joylink/viewModel/firebase/savePost/save_post.dart';
+import 'package:joylink/model/models/saved_post_model.dart';
+import 'package:joylink/viewmodel/firebase/save_post_repo/save_post.dart';
 import 'package:meta/meta.dart';
 
 part 'save_post_event.dart';

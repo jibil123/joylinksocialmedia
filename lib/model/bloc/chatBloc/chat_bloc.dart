@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:joylink/model/model/message_model.dart';
+import 'package:joylink/model/models/message_model.dart';
 import 'package:meta/meta.dart';
 
 part 'chat_event.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:joylink/utils/media_quary.dart';
-import 'package:joylink/view/screens/chatScreen/chat_list.dart';
+import 'package:joylink/view/screens/chat_screen/chat_list.dart';
 import 'package:joylink/view/screens/home/home_screen.dart';
-import 'package:joylink/view/screens/home/reelScreen.dart/reel_screen.dart';
+import 'package:joylink/view/screens/home/poll_screen/poll_screeen.dart';
+import 'package:joylink/view/screens/home/reel_screen.dart/reel_screen.dart';
 
 class MainHome extends StatelessWidget {
   const MainHome({super.key});
@@ -11,7 +11,7 @@ class MainHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
           backgroundColor: Colors.teal[50],
           appBar: PreferredSize(
@@ -28,9 +28,9 @@ class MainHome extends StatelessWidget {
                   Tab(
                     text: 'FlickVid',
                   ),
-                  // Tab(
-                  //   text: 'poll',
-                  // ),
+                  Tab(
+                    text: 'poll',
+                  ),
                 ]),
                 backgroundColor: Colors.teal[300],
                 title: Row(
@@ -62,11 +62,12 @@ class MainHome extends StatelessWidget {
               ),
             ),
           ),
-          body: const TabBarView(children: [
+          body:  TabBarView(children: [
             HomeScreen(),
             ReelScreen(),
-            // Center(child: Text('poll')),
-          ]),
-        ));
+            PollScreeen(),
+          ]), 
+        )
+      );
   }
 }
