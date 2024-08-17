@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/utils/colors.dart';
+import 'package:joylink/core/utils/colors.dart';
 import 'package:joylink/view/screens/home/saved_post/saved_post.dart';
 import 'package:joylink/view/screens/profile_screen/user_reel/user_reel.dart';
 

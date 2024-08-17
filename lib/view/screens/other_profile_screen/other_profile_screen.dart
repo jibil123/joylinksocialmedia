@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/model/models/search_model.dart';
+import 'package:joylink/core/models/search_model.dart';
 import 'package:joylink/view/screens/other_profile_screen/widgets/profile_stack.dart';
 import 'package:joylink/view/screens/other_profile_screen/widgets/other_user_details.dart';
 import 'package:joylink/view/screens/profile_screen/user_post.dart';

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:joylink/model/bloc/chatBloc/chat_bloc.dart';
+import 'package:joylink/viewmodel/bloc/chat_bloc/chat_bloc.dart';
 
 class ShareImageAndPhoto extends StatelessWidget {
   const ShareImageAndPhoto({

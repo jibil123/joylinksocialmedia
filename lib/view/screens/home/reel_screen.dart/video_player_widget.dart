@@ -2,8 +2,8 @@ import 'package:chewie/chewie.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/model/bloc/cubit/video_player_cubit.dart';
-import 'package:joylink/utils/media_quary.dart';
+import 'package:joylink/viewmodel/bloc/video_player_cubit/video_player_cubit.dart';
+import 'package:joylink/core/utils/media_quary.dart';
 import 'package:joylink/view/screens/home/reel_screen.dart/controller/functions.dart';
 
 class VideoPlayerWidget extends StatelessWidget {

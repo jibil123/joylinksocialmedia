@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/model/bloc/videoPreviewBloc/video_preview_bloc.dart';
+import 'package:joylink/viewmodel/bloc/video_preview_bloc/video_preview_bloc.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPreview extends StatelessWidget {

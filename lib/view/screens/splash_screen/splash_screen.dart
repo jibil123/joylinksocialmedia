@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/model/bloc/googleAuthBloc/google_auth_bloc.dart';
-import 'package:joylink/model/bloc/auth_bloc/auth_bloc.dart';
-import 'package:joylink/view/screens/auth_screen/main_login_screen/login_screen.dart';
+import 'package:joylink/viewmodel/bloc/google_auth_bloc/google_auth_bloc.dart';
+import 'package:joylink/viewmodel/bloc/auth_bloc/auth_bloc.dart';
+import 'package:joylink/view/screens/login_screen/main_login_screen/login_screen.dart';
 import 'package:joylink/view/screens/bottom_navigation/bottom_navigation.dart';
 
 class SplashScreenWrapper extends StatelessWidget {

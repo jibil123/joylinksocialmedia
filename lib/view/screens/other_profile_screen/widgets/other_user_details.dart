@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/model/models/search_model.dart';
+import 'package:joylink/core/models/search_model.dart';
 
 class OtherProfileUserDetails extends StatelessWidget {
   const OtherProfileUserDetails({super.key, required this.userModel});

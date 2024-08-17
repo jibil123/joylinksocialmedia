@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:joylink/model/models/saved_post_model.dart';
+import 'package:joylink/core/models/saved_post_model.dart';
 
 class FirebaseSavePost {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;

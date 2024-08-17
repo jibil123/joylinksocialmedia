@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/model/bloc/cubit/video_player_cubit.dart';
+import 'package:joylink/viewmodel/bloc/video_player_cubit/video_player_cubit.dart';
 import 'package:chewie/chewie.dart';
 
 class VideoPlayerScreen extends StatelessWidget {

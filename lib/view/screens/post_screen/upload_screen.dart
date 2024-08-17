@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/utils/media_quary.dart';
+import 'package:joylink/core/utils/media_quary.dart';
 import 'package:joylink/view/screens/post_screen/post_screen.dart';
 import 'package:joylink/view/screens/post_screen/reel_upload/reel_upload.dart';
 

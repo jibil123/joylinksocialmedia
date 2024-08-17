@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/model/bloc/auth_bloc/auth_bloc.dart';
-import 'package:joylink/model/bloc/bottomNavigation/bottom_navigation_bloc.dart';
-import 'package:joylink/model/bloc/themeBloc/theme_bloc.dart';
-import 'package:joylink/utils/media_quary.dart';
-import 'package:joylink/view/screens/auth_screen/main_login_screen/login_screen.dart';
+import 'package:joylink/viewmodel/bloc/auth_bloc/auth_bloc.dart';
+import 'package:joylink/viewmodel/bloc/bottom_navigation/bottom_navigation_bloc.dart';
+import 'package:joylink/viewmodel/bloc/theme_bloc/theme_bloc.dart';
+import 'package:joylink/core/utils/media_quary.dart';
+import 'package:joylink/view/screens/login_screen/main_login_screen/login_screen.dart';
 import 'package:joylink/view/screens/settings_screen/custom_settings_widget.dart';
 import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/info.dart';
 import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/privacy_policy.dart';
@@ -130,7 +130,7 @@ class SettingScreen extends StatelessWidget {
                         context: context,
                         builder: (context) => CustomAlertDialog(
                               title: "Log out",
-                              message: 'exit from JoyLink',
+                              message: 'Log Out of Joylink',
                               onOkPressed: () {
                                 authBloc.add(LogoutEvent());
                                 bottomNavBar

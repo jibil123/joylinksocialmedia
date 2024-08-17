@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:joylink/model/bloc/cubit/video_player_cubit.dart';
+import 'package:joylink/viewmodel/bloc/video_player_cubit/video_player_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/view/screens/home/reel_screen.dart/video_player_widget.dart';
 

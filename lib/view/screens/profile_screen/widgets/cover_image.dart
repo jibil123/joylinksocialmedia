@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/model/bloc/profilePhoto/profile_photo_bloc.dart';
+import 'package:joylink/viewmodel/bloc/profile_photo_bloc/profile_photo_bloc.dart';
 
 class CoverImage extends StatelessWidget {
   const CoverImage({

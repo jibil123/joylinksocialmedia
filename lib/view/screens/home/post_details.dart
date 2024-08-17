@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:joylink/model/models/saved_post_model.dart';
-import 'package:joylink/model/models/search_model.dart';
+import 'package:joylink/core/models/saved_post_model.dart';
+import 'package:joylink/core/models/search_model.dart';
 import 'package:joylink/view/screens/home/like_and_comment.dart';
 import 'package:joylink/view/screens/home/popup_menu_button.dart';
 import 'package:joylink/view/screens/home/widgets/post_image_widget.dart';

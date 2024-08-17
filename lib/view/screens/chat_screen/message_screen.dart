@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:joylink/model/bloc/chatBloc/chat_bloc.dart';
-import 'package:joylink/utils/media_quary.dart';
+import 'package:joylink/viewmodel/bloc/chat_bloc/chat_bloc.dart';
+import 'package:joylink/core/utils/media_quary.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/build_message_list.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/emoji_widget.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/share_image_video.dart';
