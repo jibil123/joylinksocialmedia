@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:joylink/view/screens/chat_screen/controller/message_items.dart';
-import 'package:joylink/viewmodel/firebase/chat_fetch_repo/fetch_chat.dart';
+import 'package:joylink/data/datasources/chat_fetch_repo/fetch_chat.dart';
 import 'package:intl/intl.dart';
 
 class MessageListWidget extends StatelessWidget {

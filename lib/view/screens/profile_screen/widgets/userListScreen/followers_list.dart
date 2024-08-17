@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/follow_unfollow_bloc/follow_bloc.dart';
 import 'package:joylink/core/models/search_model.dart';
 import 'package:joylink/view/screens/other_profile_screen/other_profile_screen.dart';
-import 'package:joylink/viewmodel/firebase/follow_unfollow/follow_unfollow.dart';
+import 'package:joylink/data/repositories/follow_unfollow/follow_unfollow.dart';
 
 class FollowersListScreen extends StatelessWidget {
   final List<dynamic> initialUserIds;

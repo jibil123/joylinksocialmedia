@@ -6,7 +6,7 @@ import 'package:joylink/view/screens/home/like_and_comment.dart';
 import 'package:joylink/view/screens/home/popup_menu_button.dart';
 import 'package:joylink/view/screens/home/widgets/post_image_widget.dart';
 import 'package:joylink/view/screens/other_profile_screen/other_profile_screen.dart';
-import 'package:joylink/viewmodel/controller/date_and_time/date_and_time.dart';
+import 'package:joylink/core/utils/functions/date_and_time/date_and_time.dart';
 
 class UsersPostCard extends StatelessWidget {
   UsersPostCard(

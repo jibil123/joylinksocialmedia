@@ -4,11 +4,6 @@ import 'package:joylink/core/models/fetch_user_model.dart';
 class UserRepo {
 Future<UserDetails?> getUserData(String uid) async {
   try {
-
-    // String? uid = FirebaseAuth.instance.currentUser?.uid;
-    // if (uid == null) {
-    //   return null;
-    // }
     DocumentSnapshot docSnapshot = await FirebaseFirestore.instance
        .collection('user details')
        .doc(uid)
@@ -19,5 +14,4 @@ Future<UserDetails?> getUserData(String uid) async {
     throw e.toString();
   }
 }
-
 }

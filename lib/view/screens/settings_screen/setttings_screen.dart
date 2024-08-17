@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/auth_bloc/auth_bloc.dart';
 import 'package:joylink/viewmodel/bloc/bottom_navigation/bottom_navigation_bloc.dart';
 import 'package:joylink/viewmodel/bloc/theme_bloc/theme_bloc.dart';
-import 'package:joylink/core/utils/media_quary.dart';
+import 'package:joylink/core/utils/mediaquery/media_query.dart';
 import 'package:joylink/view/screens/login_screen/main_login_screen/login_screen.dart';
 import 'package:joylink/view/screens/settings_screen/custom_settings_widget.dart';
 import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/info.dart';

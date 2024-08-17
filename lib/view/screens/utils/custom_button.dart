@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/core/utils/colors.dart';
+import 'package:joylink/core/utils/colors/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonText;

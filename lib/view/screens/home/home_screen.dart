@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/Post_fetch_bloc/post_bloc.dart';
 import 'package:joylink/viewmodel/bloc/save_post_bloc/save_post_bloc.dart';
 import 'package:joylink/core/models/saved_post_model.dart';
-import 'package:joylink/core/utils/colors.dart';
+import 'package:joylink/core/utils/colors/colors.dart';
 import 'package:joylink/view/screens/home/post_details.dart';
 
 class HomeScreen extends StatelessWidget {

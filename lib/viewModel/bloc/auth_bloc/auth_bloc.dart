@@ -1,21 +1,19 @@
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:joylink/core/models/userdetails.dart';
+import 'package:joylink/core/services/auth_service/firebase_auth.dart';
 import 'package:meta/meta.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 part 'auth_event.dart';
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final AuthService _authService = AuthService();
+
   AuthBloc() : super(AuthInitial()) {
     on<CheckLoginStatusEvent>((event, emit) async {
-      User? user;
       try {
-        await Future.delayed(const Duration(seconds: 2), () {
-          user = _auth.currentUser;
-        });
-
+        final user = await _authService.getCurrentUser();
         if (user != null) {
           emit(Authenticated(user));
         } else {
@@ -29,25 +27,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<SignupEvent>((event, emit) async {
       emit(AuthLoading());
       try {
-        final userCredential = await _auth.createUserWithEmailAndPassword(
-            email: event.user.email.toString(),
-            password: event.user.password.toString());
-        final user = userCredential.user;
+        final user = await _authService.signUpUser(
+          email: event.user.email.toString(),
+          password: event.user.password.toString(),
+          name: event.user.name,
+        );
         if (user != null) {
-          await user.sendEmailVerification();
-          FirebaseFirestore.instance
-              .collection('user details')
-              .doc(user.uid)
-              .set({
-            'uid': user.uid,
-            'mail': user.email,
-            'name': event.user.name,
-            'followers': [],
-            'following': [],
-            'imageUrl': '',
-            'coverImage': '',
-            'bio': ''
-          });
           emit(Authenticated(user));
         } else {
           emit(UnAuthenticated());
@@ -59,7 +44,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     on<LogoutEvent>((event, emit) async {
       try {
-        await _auth.signOut();
+        await _authService.logoutUser();
         emit(UnAuthenticated());
       } catch (e) {
         emit(AuthenticatedErrors(message: e.toString()));
@@ -69,9 +54,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LoginEvent>((event, emit) async {
       emit(AuthLoading());
       try {
-        final userCredential = await _auth.signInWithEmailAndPassword(
-            email: event.email, password: event.password);
-        final user = userCredential.user;
+        final user = await _authService.loginUser(
+          email: event.email,
+          password: event.password,
+        );
         if (user != null) {
           emit(Authenticated(user));
         } else {
@@ -81,9 +67,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthenticatedErrors(message: e.toString()));
       }
     });
-    on<EmailVarification>((event, emit) async{
-       FirebaseAuth.instance.currentUser?.sendEmailVerification();
-         
+
+    on<EmailVarification>((event, emit) async {
+      try {
+        await _authService.sendEmailVerification();
+      } catch (e) {
+        emit(AuthenticatedErrors(message: e.toString()));
+      }
     });
   }
 }

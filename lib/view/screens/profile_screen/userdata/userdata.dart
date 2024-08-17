@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:joylink/core/utils/colors.dart';
+import 'package:joylink/core/utils/colors/colors.dart';
 import 'package:joylink/view/screens/profile_screen/profile_edit_screen.dart';
 
 class ProfileInfo extends StatelessWidget {

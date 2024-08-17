@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/core/utils/media_quary.dart';
+import 'package:joylink/core/utils/mediaquery/media_query.dart';
 
 class ImagePreviewScreen extends StatelessWidget {
   const ImagePreviewScreen({super.key, required this.imageUrl, required this.description});

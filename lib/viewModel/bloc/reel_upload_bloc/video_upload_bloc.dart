@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:joylink/viewmodel/firebase/user_details_repo/user_repo.dart';
+import 'package:joylink/data/repositories/user_details_repo/user_repo.dart';
 
 part 'video_upload_event.dart';
 part 'video_upload_state.dart';

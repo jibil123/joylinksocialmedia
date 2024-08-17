@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:joylink/core/models/search_model.dart';
-import 'package:joylink/viewmodel/firebase/follow_unfollow/follow_unfollow.dart';
+import 'package:joylink/data/repositories/follow_unfollow/follow_unfollow.dart';
 import 'package:meta/meta.dart';
 
 part 'follow_event.dart';

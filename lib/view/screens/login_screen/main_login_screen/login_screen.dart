@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/google_auth_bloc/google_auth_bloc.dart';
 import 'package:joylink/viewmodel/bloc/auth_bloc/auth_bloc.dart';
-import 'package:joylink/core/utils/colors.dart';
+import 'package:joylink/core/utils/colors/colors.dart';
 import 'package:joylink/view/screens/login_screen/forgot_password_screen/forgot_password.dart';
 import 'package:joylink/view/screens/login_screen/on_bording_screen/text1.dart';
 import 'package:joylink/view/screens/utils/custom_button.dart';

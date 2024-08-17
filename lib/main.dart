@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/firebase_options.dart';
+import 'package:joylink/core/services/firebase_setup/firebase_options.dart';
 
 import 'package:joylink/viewmodel/bloc/Post_fetch_bloc/post_bloc.dart';
 import 'package:joylink/viewmodel/bloc/chat_bloc/chat_bloc.dart';
@@ -18,8 +18,8 @@ import 'package:joylink/viewmodel/bloc/profile_photo_bloc/profile_photo_bloc.dar
 import 'package:joylink/viewmodel/bloc/save_post_bloc/save_post_bloc.dart';
 import 'package:joylink/viewmodel/bloc/user_search_bloc/user_search_bloc.dart';
 import 'package:joylink/view/screens/splash_screen/splash_screen.dart';
-import 'package:joylink/viewmodel/firebase/fetch_userdata_repo/fetch_post_data.dart';
-import 'package:joylink/viewmodel/firebase/follow_unfollow/follow_unfollow.dart';
+import 'package:joylink/data/repositories/fetch_userdata_repo/fetch_post_data.dart';
+import 'package:joylink/data/repositories/follow_unfollow/follow_unfollow.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/Post_fetch_bloc/post_bloc.dart';
-import 'package:joylink/core/utils/media_quary.dart';
+import 'package:joylink/core/utils/mediaquery/media_query.dart';
 import 'package:joylink/view/screens/home/like_and_comment.dart';
 import 'package:joylink/view/screens/post_screen/upload_screen.dart';
-import 'package:joylink/viewmodel/controller/date_and_time/date_and_time.dart';
+import 'package:joylink/core/utils/functions/date_and_time/date_and_time.dart';
 
 class UserPosts extends StatelessWidget {
   UserPosts(

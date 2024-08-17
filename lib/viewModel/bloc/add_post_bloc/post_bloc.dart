@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:joylink/core/models/post_model.dart';
-import 'package:joylink/viewmodel/controller/mapSerivces/map_placemark.dart';
+import 'package:joylink/core/services/location_service/map_placemark.dart';
 import 'package:meta/meta.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:permission_handler/permission_handler.dart';

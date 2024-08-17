@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:joylink/viewmodel/bloc/chat_bloc/chat_bloc.dart';
-import 'package:joylink/core/utils/media_quary.dart';
+import 'package:joylink/core/utils/mediaquery/media_query.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/build_message_list.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/emoji_widget.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/share_image_video.dart';
-import 'package:joylink/viewmodel/firebase/chat_fetch_repo/fetch_chat.dart';
+import 'package:joylink/data/datasources/chat_fetch_repo/fetch_chat.dart';
 
 class ChatScreen extends StatelessWidget {
   final String receiverId;
