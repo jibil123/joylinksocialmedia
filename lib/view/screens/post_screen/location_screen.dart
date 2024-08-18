@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/add_post_bloc/post_bloc.dart';
-import 'package:joylink/view/screens/utils/customtextformfield.dart';
+import 'package:joylink/core/widgets/custom_textfield/customtextformfield.dart';
 
 class LocationScreen extends StatelessWidget {
   LocationScreen({super.key});

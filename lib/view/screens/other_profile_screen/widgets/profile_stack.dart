@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/follow_unfollow_bloc/follow_bloc.dart';
 import 'package:joylink/core/models/search_model.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
 import 'package:joylink/view/screens/chat_screen/message_screen.dart';
 import 'package:joylink/view/screens/profile_screen/widgets/follow_text_widget.dart';
 import 'package:joylink/data/repositories/follow_unfollow/follow_unfollow.dart';

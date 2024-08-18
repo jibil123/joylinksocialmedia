@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/chat_bubble_bloc/chat_bubble_bloc.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
 
 class ChatBubbleScreen extends StatelessWidget {
   final String message;

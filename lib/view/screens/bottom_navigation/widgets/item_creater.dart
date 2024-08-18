@@ -1,7 +1,7 @@
   import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/bottom_navigation/bottom_navigation_bloc.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
 import 'package:joylink/view/screens/bottom_navigation/widgets/page_changing_list.dart';
 

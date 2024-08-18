@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
-import 'package:joylink/core/utils/custom_snackbar/custom_snackbar.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
+import 'package:joylink/core/widgets/custom_snackbar/custom_snackbar.dart';
 import 'package:joylink/view/screens/post_screen/reel_upload/video_preview.dart';
 import 'package:joylink/viewmodel/bloc/reel_upload_bloc/video_upload_bloc.dart';
 import 'package:joylink/viewmodel/bloc/video_preview_bloc/video_preview_bloc.dart';

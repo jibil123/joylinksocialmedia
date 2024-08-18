@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/edit_details_bloc/edit_details_bloc.dart';
-import 'package:joylink/view/screens/utils/custom_button.dart';
-import 'package:joylink/view/screens/utils/customtextformfield.dart';
+import 'package:joylink/core/widgets/custom_button/custom_button.dart';
+import 'package:joylink/core/widgets/custom_textfield/customtextformfield.dart';
 
 class ProfileEditScreen extends StatefulWidget {
   const ProfileEditScreen({super.key});

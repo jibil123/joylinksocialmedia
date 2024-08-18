@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:joylink/viewmodel/bloc/add_post_bloc/post_bloc.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
 
 class PostPhotoScreen extends StatelessWidget {

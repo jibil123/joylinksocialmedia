@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/Post_fetch_bloc/post_bloc.dart';
 import 'package:joylink/viewmodel/bloc/add_post_bloc/post_bloc.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
-import 'package:joylink/view/screens/utils/custom_elevated_button.dart';
-import 'package:joylink/view/screens/utils/customtextformfield.dart';
+import 'package:joylink/core/widgets/custom_elevated_button/custom_elevated_button.dart';
+import 'package:joylink/core/widgets/custom_textfield/customtextformfield.dart';
 import 'package:joylink/view/screens/post_screen/location_screen.dart';
 import 'package:joylink/view/screens/post_screen/post_photo.dart';
 

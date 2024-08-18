@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
 import 'package:joylink/view/screens/bottom_navigation/widgets/nav_icons.dart';
 

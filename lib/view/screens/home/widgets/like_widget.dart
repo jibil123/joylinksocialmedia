@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
 
 class LikeScreen extends StatelessWidget {
   const LikeScreen(

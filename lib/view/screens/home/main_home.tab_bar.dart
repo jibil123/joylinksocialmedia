@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
 import 'package:joylink/view/screens/chat_screen/chat_list.dart';
+import 'package:joylink/view/screens/home/ai_screen/ai_screen.dart';
 import 'package:joylink/view/screens/home/home_screen.dart';
 import 'package:joylink/view/screens/home/poll_screen/poll_screeen.dart';
 import 'package:joylink/view/screens/home/reel_screen.dart/reel_screen.dart';
@@ -18,8 +19,8 @@ class MainHome extends StatelessWidget {
             preferredSize: const Size.fromHeight(100.0),
             child: ClipRRect(
               borderRadius: const BorderRadius.vertical(
-            bottom: Radius.circular(30),
-          ),
+                bottom: Radius.circular(30),
+              ),
               child: AppBar(
                 bottom: const TabBar(tabs: [
                   Tab(
@@ -35,16 +36,24 @@ class MainHome extends StatelessWidget {
                 backgroundColor: Colors.teal[300],
                 title: Row(
                   children: [
-                         SizedBox(
-                        width: 50, // Adjust the width as needed
-                        height: 50, // Adjust the height as needed
-                        child: Image.asset("assets/images/joylink-logo.png",
-                            )),
-                            SizedBox(width: mediaqueryHeight(0.01, context),),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const JoylinkAi()));
+                      },
+                      child: SizedBox(
+                          width: 45, // Adjust the width as needed
+                          height: 45, // Adjust the height as needed
+                          child: Image.asset(
+                            "assets/images/joylink-logo.png",
+                          )),
+                    ),
+                    SizedBox(
+                      width: mediaqueryHeight(0.01, context),
+                    ),
                     const Text(
                       'Joylink Feed',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.black),
                     ),
                   ],
                 ),
@@ -62,12 +71,11 @@ class MainHome extends StatelessWidget {
               ),
             ),
           ),
-          body:const TabBarView(children: [
+          body: const TabBarView(children: [
             HomeScreen(),
             ReelScreen(),
             PollScreeen(),
-          ]), 
-        )
-      );
+          ]),
+        ));
   }
 }

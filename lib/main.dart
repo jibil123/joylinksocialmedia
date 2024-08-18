@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
+import 'package:joylink/core/constants/apis/gemini_api.dart';
 import 'package:joylink/core/services/firebase_setup/firebase_options.dart';
-
 import 'package:joylink/viewmodel/bloc/Post_fetch_bloc/post_bloc.dart';
 import 'package:joylink/viewmodel/bloc/chat_bloc/chat_bloc.dart';
 import 'package:joylink/viewmodel/bloc/follow_unfollow_bloc/follow_bloc.dart';
@@ -26,6 +27,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  Gemini.init(apiKey: geminiApiKey);
   runApp(
     RepositoryProvider(
       create: (context) => Repository(),

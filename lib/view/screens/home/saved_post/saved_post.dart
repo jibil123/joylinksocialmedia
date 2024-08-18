@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joylink/viewmodel/bloc/save_post_bloc/save_post_bloc.dart';
-import 'package:joylink/core/utils/colors/colors.dart';
+import 'package:joylink/core/theme/colors/colors.dart';
 import 'package:joylink/view/screens/home/saved_post/saved_post_widget.dart';
 
 class SavedPostScreen extends StatelessWidget {

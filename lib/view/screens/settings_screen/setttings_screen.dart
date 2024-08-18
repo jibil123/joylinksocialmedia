@@ -9,7 +9,7 @@ import 'package:joylink/view/screens/settings_screen/custom_settings_widget.dart
 import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/info.dart';
 import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/privacy_policy.dart';
 import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/terms_conditions.dart';
-import 'package:joylink/view/widgets/custom_alert_dialog.dart';
+import 'package:joylink/core/widgets/custom_alert_dialog/custom_alert_dialog.dart';
 // import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingScreen extends StatelessWidget {
