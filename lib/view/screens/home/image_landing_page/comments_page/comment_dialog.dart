@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joylink/view/screens/home/widgets/comment_bottom_sheet.dart';
+import 'package:joylink/view/screens/home/image_landing_page/comments_page/comment_bottom_sheet.dart';
 
 void showCommentBottomSheet(BuildContext context, String postId) {
   showModalBottomSheet(

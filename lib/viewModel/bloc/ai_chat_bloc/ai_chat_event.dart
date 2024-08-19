@@ -21,9 +21,10 @@ class SendMessageEvent extends AiChatEvent {
 
 class SendMediaMessageEvent extends AiChatEvent {
   final XFile imageFile;
+  final String description;
 
-  const SendMediaMessageEvent(this.imageFile);
+  const SendMediaMessageEvent(this.imageFile, this.description);
 
   @override
-  List<Object> get props => [imageFile];
+  List<Object> get props => [imageFile,description];
 }

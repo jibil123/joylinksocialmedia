@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:joylink/core/models/saved_post_model.dart';
 import 'package:joylink/core/theme/colors/colors.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
-import 'package:joylink/view/screens/home/image_preview.dart';
+import 'package:joylink/view/screens/home/image_landing_page/widgets/image_preview.dart';
 
 class PostImageWidget extends StatelessWidget {
   const PostImageWidget({

@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:joylink/core/models/saved_post_model.dart';
 import 'package:joylink/core/models/search_model.dart';
-import 'package:joylink/view/screens/home/like_and_comment.dart';
-import 'package:joylink/view/screens/home/popup_menu_button.dart';
-import 'package:joylink/view/screens/home/widgets/post_image_widget.dart';
+import 'package:joylink/view/screens/home/image_landing_page/controller/like_and_comment.dart';
+import 'package:joylink/view/screens/home/image_landing_page/controller/popup_menu_button.dart';
+import 'package:joylink/view/screens/home/image_landing_page/widgets/post_image_widget.dart';
 import 'package:joylink/view/screens/other_profile_screen/other_profile_screen.dart';
 import 'package:joylink/core/utils/functions/date_and_time/date_and_time.dart';
 

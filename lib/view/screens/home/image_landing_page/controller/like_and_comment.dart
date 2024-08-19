@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:joylink/view/screens/home/widgets/comment_dialog.dart';
+import 'package:joylink/view/screens/home/image_landing_page/comments_page/comment_dialog.dart';
 
 class LikeAndCommentButtons extends StatelessWidget {
   final String postId;
@@ -48,7 +48,6 @@ class LikeAndCommentButtons extends StatelessWidget {
         if (!postSnapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
         }
-
         if (!postSnapshot.data!.exists) {
           return const Center(child: Text('Post does not exist.'));
         }

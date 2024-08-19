@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:joylink/view/screens/chat_screen/bubble_chat_screen.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/video_widget.dart';
-import 'package:joylink/view/screens/home/image_preview.dart';
+import 'package:joylink/view/screens/home/image_landing_page/widgets/image_preview.dart';
 
 String getFormattedDate(Timestamp timestamp) {
   DateTime dateTime = timestamp.toDate();
