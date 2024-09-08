@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:joylink/core/theme/colors/colors.dart';
 import 'package:joylink/view/screens/home/saved_post/saved_post.dart';
 import 'package:joylink/view/screens/profile_screen/user_reel/user_reel.dart';
+import 'package:joylink/view/screens/profile_screen/widgets/user_polls.dart';
 
 class ProfileButtons extends StatelessWidget {
-  const ProfileButtons({
-    super.key,
-    required this.currentUserId,
-    required this.profileScreen
-  });
+  const ProfileButtons(
+      {super.key, required this.currentUserId, required this.profileScreen});
   final String currentUserId;
   final bool profileScreen;
   @override
@@ -40,6 +38,20 @@ class ProfileButtons extends StatelessWidget {
                   'Reel',
                   style: TextStyle(color: AppColors.whiteColor),
                 )),
+            Container(
+              height: 25,
+              width: 2.0,
+              color: AppColors.greyColor,
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          UserPollsPage(userId: currentUserId)));
+              },
+              child: const Text('Polls',
+                  style: TextStyle(color: AppColors.whiteColor)),
+            ),
             if (profileScreen) ...[
               Container(
                 height: 25,
@@ -50,7 +62,8 @@ class ProfileButtons extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => SavedPostScreen(
-                              isSaved: false, currentUserId: currentUserId,
+                              isSaved: false,
+                              currentUserId: currentUserId,
                             )));
                   },
                   child: const Text(

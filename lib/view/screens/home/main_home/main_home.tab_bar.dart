@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
 import 'package:joylink/view/screens/chat_screen/chat_list.dart';
-import 'package:joylink/view/screens/ai_screen/main_screen/ai_screen.dart';
 import 'package:joylink/view/screens/home/image_landing_page/home_screen.dart';
 import 'package:joylink/view/screens/home/poll_screen/poll_screeen.dart';
 import 'package:joylink/view/screens/home/reel_screen.dart/reel_screen.dart';
@@ -71,13 +70,12 @@ class MainHome extends StatelessWidget {
               ),
             ),
           ),
-          body: const TabBarView(
+          body:  const TabBarView(
             physics: NeverScrollableScrollPhysics(),
             children: [
-
             HomeScreen(),
             ReelScreen(),
-            PollScreeen(),
+           AllPollsPage(),
           ]),
         ));
   }

@@ -5,7 +5,7 @@ class CustomAlertDialog extends StatelessWidget {
   final String message;
   final VoidCallback onOkPressed;
   final String childName;
-
+  
   const CustomAlertDialog({
     super.key,
     required this.title,

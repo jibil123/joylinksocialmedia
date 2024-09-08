@@ -11,7 +11,7 @@ class AiChatBloc extends Bloc<AiChatEvent, AiChatState> {
   final ChatUser currentUser;
   final ChatUser geminiUser;
 
-  AiChatBloc({required this.gemini, required this.currentUser, required this.geminiUser}) : super(ChatLoaded([])) {
+  AiChatBloc({required this.gemini, required this.currentUser, required this.geminiUser}) : super(const ChatLoaded([])) {
     on<SendMessageEvent>(_onSendMessage);
     on<SendMediaMessageEvent>(_onSendMediaMessage);
   }
@@ -41,7 +41,7 @@ Future<void> _onSendMessage(SendMessageEvent event, Emitter<AiChatState> emit) a
           createdAt: botMessage.createdAt,
           text: botMessage.text + responsePart,
         );
-        updatedMessages = [botMessage, ...updatedMessages.skip(1).toList()];
+        updatedMessages = [botMessage, ...updatedMessages.skip(1)];
         emit(ChatLoaded(List.from(updatedMessages)));
       }
     }
@@ -96,7 +96,7 @@ Future<void> _onSendMediaMessage(SendMediaMessageEvent event, Emitter<AiChatStat
         );
 
         // Update the list with the new bot message
-        updatedMessages = [botMessage, ...updatedMessages.skip(1).toList()];
+        updatedMessages = [botMessage, ...updatedMessages.skip(1)];
         emit(ChatLoaded(List.from(updatedMessages)));
       }
     }

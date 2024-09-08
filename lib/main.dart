@@ -5,9 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:joylink/core/constants/apis/gemini_api.dart';
 import 'package:joylink/core/services/firebase_setup/firebase_options.dart';
+import 'package:joylink/data/repositories/poll_respository/poll_repository.dart';
 import 'package:joylink/viewmodel/bloc/Post_fetch_bloc/post_bloc.dart';
 import 'package:joylink/viewmodel/bloc/chat_bloc/chat_bloc.dart';
 import 'package:joylink/viewmodel/bloc/follow_unfollow_bloc/follow_bloc.dart';
+import 'package:joylink/viewmodel/bloc/poll_bloc/poll_bloc.dart';
 import 'package:joylink/viewmodel/bloc/theme_bloc/theme_bloc.dart';
 import 'package:joylink/viewmodel/bloc/add_post_bloc/post_bloc.dart';
 import 'package:joylink/viewmodel/bloc/bottom_navigation/bottom_navigation_bloc.dart';
@@ -84,6 +86,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => FollowBloc(UserService()),
+        ),
+        BlocProvider(
+          create: (context) =>  PollBloc(PollRepository()),    
         )
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(

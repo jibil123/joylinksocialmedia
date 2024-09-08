@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
+import 'package:joylink/view/screens/post_screen/add_poll_screen/add_poll_screen.dart';
 import 'package:joylink/view/screens/post_screen/post_screen.dart';
 import 'package:joylink/view/screens/post_screen/reel_upload/reel_upload.dart';
 
@@ -9,7 +10,7 @@ class UploadScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
           backgroundColor: Colors.teal[50],
           appBar: PreferredSize(
@@ -27,9 +28,9 @@ class UploadScreen extends StatelessWidget {
                   Tab(
                     text: 'FlickVid',
                   ),
-                  // Tab(
-                  //   text: 'poll',
-                  // ),
+                  Tab(
+                    text: 'poll',
+                  ),
                 ]),
                 title: Row(
                   children: [
@@ -52,7 +53,7 @@ class UploadScreen extends StatelessWidget {
           body: TabBarView(children: [
             PostScreen(),
            const UploadVideoScreen(),
-            // const Center(child: Text('image')),
+            const AddPollPage(),
           ]),
         ));
   }

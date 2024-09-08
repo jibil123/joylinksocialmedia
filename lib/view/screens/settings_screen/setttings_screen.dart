@@ -10,6 +10,8 @@ import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/i
 import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/privacy_policy.dart';
 import 'package:joylink/view/screens/settings_screen/seperate_settings_screens/terms_conditions.dart';
 import 'package:joylink/core/widgets/custom_alert_dialog/custom_alert_dialog.dart';
+import 'package:share_plus/share_plus.dart';
+
 // import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -36,21 +38,24 @@ class SettingScreen extends StatelessWidget {
             ),
             child: AppBar(
               title: Row(
-              children: [
-                     SizedBox(
-                    width: 50, // Adjust the width as needed
-                    height: 50, // Adjust the height as needed
-                    child: Image.asset("assets/images/joylink-logo.png",
-                        )),
-                        SizedBox(width: mediaqueryHeight(0.01, context),),
-                const Text(
-                  'Settings',
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-                ),
-              ],
-            ),
-              backgroundColor:Colors.teal[300],
+                children: [
+                  SizedBox(
+                      width: 50, // Adjust the width as needed
+                      height: 50, // Adjust the height as needed
+                      child: Image.asset(
+                        "assets/images/joylink-logo.png",
+                      )),
+                  SizedBox(
+                    width: mediaqueryHeight(0.01, context),
+                  ),
+                  const Text(
+                    'Settings',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
+                ],
+              ),
+              backgroundColor: Colors.teal[300],
             ),
           ),
         ),
@@ -82,24 +87,14 @@ class SettingScreen extends StatelessWidget {
                         builder: (context) => const AboutScreen()));
                   }),
               const SizedBox(height: 20),
-              // SettingsItem(icon: Icons.share, text: 'Share', onTap: () {}),
-              // const SizedBox(height: 20),
-              // FutureBuilder<String>(
-              //   future: _getAppVersion(),
-              //   builder: (context, snapshot) {
-              //     if (snapshot.connectionState == ConnectionState.waiting) {
-              //       return const CircularProgressIndicator();
-              //     } else if (snapshot.hasError) {
-              //       return const Text('Error loading version');
-              //     } else {
-              //       return SettingsItem(
-              //         icon: Icons.info_outline,
-              //         text: 'Version ${snapshot.data}',
-              //         onTap: () {},
-              //       );
-              //     }
-              //   },
-              // ),
+              SettingsItem(
+                  icon: Icons.share,
+                  text: 'Share',
+                  onTap: () {
+                    Share.share(
+                        'Get joylinksocialmedia from the Amazon Appstore. Check it out - https://www.amazon.com/dp/B0D7QTRLWJ/ref=apps_sf_sta');
+                  }),
+              const SizedBox(height: 20),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

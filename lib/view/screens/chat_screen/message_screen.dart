@@ -1,28 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:joylink/core/constants/current_user_id/current_user_id.dart';
+import 'package:joylink/core/models/fetch_user_model.dart';
+import 'package:joylink/data/repositories/user_details_repo/user_repo.dart';
 import 'package:joylink/viewmodel/bloc/chat_bloc/chat_bloc.dart';
 import 'package:joylink/core/utils/mediaquery/media_query.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/build_message_list.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/emoji_widget.dart';
 import 'package:joylink/view/screens/chat_screen/widgets/share_image_video.dart';
 import 'package:joylink/data/datasources/chat_fetch_repo/fetch_chat.dart';
+import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 
 class ChatScreen extends StatelessWidget {
   final String receiverId;
   final String profileImage;
   final String chatUserName;
-  ChatScreen(
-      {super.key,
-      required this.receiverId,
-      required this.profileImage,
-      required this.chatUserName});
+
+  ChatScreen({
+    super.key,
+    required this.receiverId,
+    required this.profileImage,
+    required this.chatUserName,
+  });
 
   final FetchChat fetchChat = FetchChat();
   final TextEditingController messageController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final ScrollController scrollController = ScrollController();
   final ImagePicker picker = ImagePicker();
+  final userRepo=UserRepo();
 
   @override
   Widget build(BuildContext context) {
@@ -43,11 +50,10 @@ class ChatScreen extends StatelessWidget {
                 ),
                 child: AppBar(
                   centerTitle: true,
-          
                   title: Row(
                     children: [
                       CircleAvatar(
-                        radius: 22, // Adjust the radius as needed
+                        radius: 22,
                         backgroundImage: NetworkImage(profileImage),
                         onBackgroundImageError: (_, __) => const Icon(Icons.person),
                       ),
@@ -65,6 +71,50 @@ class ChatScreen extends StatelessWidget {
                     ],
                   ),
                   backgroundColor: Colors.teal[300],
+                  actions: [
+                    IconButton(
+                      icon: const Icon(Icons.videocam, color: Colors.white),
+                      
+                      onPressed: ()async {
+                        UserDetails? userDetails=await userRepo.getUserData(currentUser);
+                        // Navigate to video call screen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ZegoUIKitPrebuiltCall(
+                              appID: 377531080, // Your App ID
+                              appSign: 'e75d1110063dfe81225c3844f33e22e11a696cb04f360879994e00646c4ddacb', // Your App Sign
+                              userID: userDetails!.userId, // Pass the local user's ID
+                              userName: userDetails.name, // Pass the local user's name
+                              callID: receiverId, // Use receiver ID as call ID
+                              config: ZegoUIKitPrebuiltCallConfig.oneOnOneVideoCall()..audioEffect..audioVideoView,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.phone, color: Colors.white),
+                      onPressed: ()async {
+                        UserDetails? userDetails=await userRepo.getUserData(currentUser);
+                        
+                        // Navigate to audio call screen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ZegoUIKitPrebuiltCall(
+                              appID: 377531080, // Your App ID
+                              appSign: 'e75d1110063dfe81225c3844f33e22e11a696cb04f360879994e00646c4ddacb', // Your App Sign
+                              userID: userDetails!.userId, // Pass the local user's ID
+                              userName: userDetails.name, // Pass the local user's name
+                              callID: receiverId, // Use receiver ID as call ID
+                              config: ZegoUIKitPrebuiltCallConfig.oneOnOneVoiceCall(),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),
